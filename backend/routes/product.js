@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const {getProducts,createProduct,getSingleProduct,updateProduct} = require('../controllers/productController');
+const {getProducts,createProduct,getSingleProduct,updateProduct,delteProduct} = require('../controllers/productController');
 
 router
     .route('/products')
@@ -14,6 +14,7 @@ router
     .post(createProduct);
 router
     .route('/admin/product/:id')
-    .put(updateProduct);
+    .put(updateProduct)
+    .delete(delteProduct);
 
 module.exports = router;    
