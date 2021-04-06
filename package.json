@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "PORT=3000 nodemon backend/server.js",
     "dev": "NODE_ENV=DEVELOPMENT nodemon backend/server",
-    "prod": "NODE_ENV=RPODUCTION nodemon backend/server"
+    "prod": "NODE_ENV=PRODUCTION nodemon backend/server"
   },
   "author": "Arjun Kumar",
   "license": "ISC",
