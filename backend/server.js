@@ -13,6 +13,15 @@ console.log(app.get('env'))
 connectDatabase();
 
 //Listning on Server
-app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, () => {
     console.log(`Server is running on Port : ${process.env.PORT} in ${process.env.NODE_ENV} mode`);
 });
+
+//Handle unhandled promise Rejection
+process.on('unhandledRejection', err =>{
+    console.log(`ERROR: ${err.message}`);
+    console.log('shutting down the server due to unhandled promise rejection');
+    server.close(() =>{
+        process.exit(1);
+    })
+}) 
