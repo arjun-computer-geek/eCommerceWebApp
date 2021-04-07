@@ -8,6 +8,7 @@ app.use(express.json());
 //Import All Routes
 const products = require('./routes/product');
 
+//Mounting the routes.
 app.use('/api/v1',products);
 
 //Middleware to handle error

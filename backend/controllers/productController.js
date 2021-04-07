@@ -1,22 +1,25 @@
 const Product = require('../models/productModel');
 const ErrorHandler = require('../utils/errorhandler');
 const catchAsync = require('../middlewares/catchAsync');
+const APIFeatures = require('../utils/apiFeatures');
 
 // Create new product => /api/v1/product/new
 exports.createProduct =catchAsync( async (req, res, next) => {
 
     const newProduct = await Product.create(req.body);
-
+    
     res.status(201).json({
         success: true,
         newProduct
     })
 });
 
-//Get All Products => /api/v1/products
+//Get All Products => /api/v1/products?keyword=mobile
 exports.getProducts = catchAsync( async (req, res,next) => {
-
-    const products = await Product.find();
+    
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+                        .search()
+    const products = await apiFeatures.query;
 
     res.status(200).json({
         success: true,
