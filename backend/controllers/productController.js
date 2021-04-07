@@ -16,15 +16,22 @@ exports.createProduct =catchAsync( async (req, res, next) => {
 
 //Get All Products => /api/v1/products?keyword=mobile
 exports.getProducts = catchAsync( async (req, res,next) => {
+
+    const resultsPerPage = 4;
+    const productCount = await Product.countDocuments();
+    console.log(productCount);
     
     const apiFeatures = new APIFeatures(Product.find(), req.query)
                         .search()
                         .filter()
+                        .pagination(resultsPerPage)
     const products = await apiFeatures.query;
 
     res.status(200).json({
         success: true,
-        message: products
+        count: products.length,
+        productCount,
+        products
     });
 });
 
