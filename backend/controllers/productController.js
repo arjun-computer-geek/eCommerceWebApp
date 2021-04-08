@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+
 const ErrorHandler = require('../utils/errorhandler');
 const catchAsync = require('../middlewares/catchAsync');
 const APIFeatures = require('../utils/apiFeatures');

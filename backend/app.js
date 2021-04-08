@@ -7,9 +7,12 @@ app.use(express.json());
 
 //Import All Routes
 const products = require('./routes/product');
+const users = require('./routes/user');
 
 //Mounting the routes.
 app.use('/api/v1',products);
+app.use('/api/v1',users);
+
 
 //Middleware to handle error
 app.use(errorMiddleware);
