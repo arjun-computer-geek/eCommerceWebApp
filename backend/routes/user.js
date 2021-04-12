@@ -1,7 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const {registerUser, loginUser, logout, forgotPassword, resetPassword} = require('../controllers/userController');
+const {
+    registerUser, 
+    loginUser, 
+    logout, 
+    forgotPassword, 
+    resetPassword,
+    getUserProfile,
+    updatePassword
+} = require('../controllers/userController');
+
+const {isAuthenticatedUser} = require('../middlewares/userAuth')
 
 router
     .route('/register')
@@ -23,4 +33,11 @@ router
     .route('/logout')
     .get(logout);
 
+router
+    .route('/me')
+    .get(isAuthenticatedUser, getUserProfile)
+
+    router
+    .route('/password/update')
+    .put(isAuthenticatedUser, updatePassword);
 module.exports = router;
