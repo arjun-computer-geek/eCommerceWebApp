@@ -180,3 +180,69 @@ exports.logout = catchAsync(async(req, res, next) => {
         message: 'Loged out'
     })
 })
+
+// Admin Routes
+
+// Get all users => /api/v1/admin/users
+exports.getAllUsers = catchAsync( async(req, res, next) => {
+
+    const users = await User.find();
+
+    res.status(200).json({
+        success: true,
+        users
+    })
+})
+
+//Get user Details => /api/v1/admin/user/:id
+exports.getUserDetails = catchAsync(async(req, res, next) =>{
+    const user = await User.findById(req.params.id);
+
+    if(!user) {
+        return next(new ErrorHandler(`User does not found with id ${req.params.id}`));
+    }
+
+    res.status(200).json({
+        success: true,
+        user
+    })
+})
+
+//Update user profile => /api/v1/admin/user/:id
+exports.updateUser = catchAsync( async(req, res, next) => {
+    
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role
+    }
+
+
+    const user = await User.findByIdAndUpdate(req.params.id, newUserData, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+    })
+
+    res.status(200).json({
+        sucess: true
+    })
+})
+
+//Delete User => /api/v1/admin/user/:id
+exports.deleteUser = catchAsync(async(req, res, next) =>{
+    const user = await User.findById(req.params.id);
+
+    if(!user) {
+        return next(new ErrorHandler(`User does not found with id ${req.params.id}`));
+    }
+
+    // Remove awatar --TODO
+
+    await user.remove();
+
+    res.status(200).json({
+        success: true,
+        
+    })
+})
