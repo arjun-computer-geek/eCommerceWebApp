@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eCommerceApp</title>
+</head>
+<body>
+  <div id="root" class="grid-container">
+    
+  </div>
+  <script>
+    function openMenu(){
+        // document.querySelector(".sidebar").classList.toggle("active");
+        document.getElementById("sidebar").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    function closeMenu(){
+        // document.querySelector(".sidebar").classList.toggle("active");
+
+        document.getElementById("sidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+        document.body.style.backgroundColor = "white";
+    }
+  </script>
+</body>
+</html>
