@@ -1,0 +1,12 @@
+.offer{
+    background: radial-gradient(#fff, #ffd6d6);
+    margin-top: 80px;
+    padding: 30px 0;
+    min-height: 100vh;
+}
+.col-2 .offer-img{
+    padding: 80px;
+}
+.col-2 small{
+    color: #555;
+}
