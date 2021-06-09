@@ -115,6 +115,7 @@ p{
     flex-basis: 25%;
     padding: 10px;
     min-width: 200px;
+    margin: 0px 10px;
     margin-bottom: 50px;
     transition: transform 0.5s;
 }
@@ -159,9 +160,32 @@ p{
     color: #555;
     font-weight: normal;
 }
-.rating .fa{
+
+.star-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
     color: #ff523b;
-}
+  }
+  
+  .star-outer::before {
+    content: '\f006 \f006 \f006 \f006 \f006';
+  }
+  
+  .star-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .star-inner::before {
+    content: '\f005 \f005 \f005 \f005 \f005';
+    color: #ff523b;
+  }
+
 /* Offer */
 .offer{
     background: radial-gradient(#fff, #ffd6d6);

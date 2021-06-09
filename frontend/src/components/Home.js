@@ -1,28 +1,38 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-import MetaData from "./layouts/MetaData"
+import MetaData from './layouts/MetaData'
+import{ useDispatch, useSelector } from 'react-redux'
+import { getProducts } from '../actions/productActions';
+import Product from './product/Product';
+import Loader from './layouts/Loader';
 
 const Home = () => {
+
+    const dispatch = useDispatch();
+
+    const {loading, products, error, productsCount} = useSelector(state => state.products)
+
+    useEffect(() => {
+
+        dispatch(getProducts());
+
+    }, [dispatch])
+
     return (
         <>
-            <MetaData title={'Buy Best Products Online'}/>
-            <div class="container">
-                <h2 class="title">Latest Products</h2>
-                <div class="row">
-                    <div class="col-4 latest-products">
-                        <img src="images/products/p1.jpg" alt="product1" />
-                        <h4 class="product-title">Cotton Jeans Shirt</h4>
-                        <div class="rating">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star-o" aria-hidden="true"></i>
-                        </div>
-                        <p>&#8377; 499</p>
+        {loading? <Loader />:
+            <>
+                <MetaData title={'Buy Best Products Online'}/>
+                <div className="container">
+                    <h2 className="title">Latest Products</h2>
+                    <div className="row">
+                        {products && products.map(product => (
+                            <Product key={product.id} product={product} />
+                        ))}
                     </div>
-                </div>
-            </div> 
+                </div> 
+            </>
+        }
         </>
     )
 }

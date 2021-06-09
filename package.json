@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT=3000 nodemon backend/server.js",
+    "start": "concurrently \"npm run prod\" \"cd frontend && npm start\"",
     "dev": "set NODE_ENV=DEVELOPMENT && nodemon backend/server",
     "prod": "set NODE_ENV=PRODUCTION && nodemon backend/server"
   },
