@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run prod\" \"cd frontend && npm start\"",
-    "dev": "set NODE_ENV=DEVELOPMENT && nodemon backend/server",
-    "prod": "set NODE_ENV=PRODUCTION && nodemon backend/server"
+    "dev": "NODE_ENV=DEVELOPMENT nodemon backend/server",
+    "prod": "NODE_ENV=PRODUCTION  nodemon backend/server"
   },
   "author": "Arjun Kumar",
   "license": "ISC",
@@ -21,6 +21,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "nodemailer": "^6.5.0",
+    "react-alert": "^7.0.3",
+    "react-alert-template-basic": "^1.0.2",
     "validator": "^13.5.2"
   },
   "devDependencies": {
