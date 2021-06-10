@@ -18,10 +18,20 @@ const Header = () => {
                             <li><a href="">About</a></li>
                             <li><a href="">Contact</a></li>
                             <li><a href="account.html">Account</a></li>
-                        </ul>
-                    </nav>
+                    <li>    
                     <a href="cart.html"><img src="images/cart.svg" alt="" width="30px" height="30px"/></a>
                     <img className="menu-icon" src="images/menu.png" alt="mneu" width="30px" height="30px" />
+                    </li>
+                    <li>
+                    <div className="search-box">
+                        <input className='search-text' type="text" placeholder="Type to search"/>
+                        <a className="search-btn" href="#">
+                            <i className="fa fa-search"></i>
+                        </a>
+                    </div>
+                    </li>
+                    </ul>
+                    </nav>
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-
-import MetaData from './layouts/MetaData'
+import { useAlert } from 'react-alert';
 import{ useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../actions/productActions';
+
+import MetaData from './layouts/MetaData'
 import Product from './product/Product';
 import Loader from './layouts/Loader';
-import { useAlert } from 'react-alert';
 
 const Home = () => {
 

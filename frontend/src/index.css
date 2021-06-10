@@ -16,7 +16,7 @@ a{
 .container{
     max-width: 100%;
     margin: auto;
-    padding: 0 10%;
+    padding: 0 5%;
 }
 
 .header{
@@ -53,8 +53,55 @@ nav ul li a{
     font-weight: 400;
 }
 
+nav ul li a:hover{
+    color: #ff523b;
+}
+
 p{
     color: #555;
+}
+
+.logo{
+    width: 350px;
+    height: 50px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.search-box{
+    position: relative;
+    left: 0;
+    top: 10px;
+    background: #2f3640;
+    height: 30px;
+    border-radius: 30px;
+    padding:5px;
+}
+
+.search-box:hover  > .search-text{
+    width: auto;
+}
+
+.search-box:hover > .search-btn{
+    color: #fff;
+}
+.search-btn{
+    color: #ff523b;
+    float: right;
+    display: flex;
+}
+
+.search-text{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    color: #fff;
+    width: 0px;
 }
 
 .row{
@@ -186,20 +233,6 @@ p{
     color: #ff523b;
   }
 
-/* Offer */
-.offer{
-    background: radial-gradient(#fff, #ffd6d6);
-    margin-top: 80px;
-    padding: 30px 0;
-    min-height: 100vh;
-}
-.col-2 .offer-img{
-    padding: 80px;
-}
-.col-2 small{
-    color: #555;
-}
-
 /* Testimonial */
 .testimonial{
     padding: 100px;
@@ -243,7 +276,7 @@ p{
     font-size: 14px;
     padding-top: 100px;
     min-height: 50vh;
-    padding: 10%;
+    padding: 8%;
 }
 .footer p{
     color: #8a8a8a;
@@ -276,10 +309,11 @@ ul{
     list-style-type: none;
 }
 .app-logo{
-    margin-top: 20px;
+    margin: 20px;
 }
 .app-logo img{
-    width: 140px;
+    width: 150px;
+    margin-top: 5px;
 }
 .footer hr{
     border:none;
@@ -322,8 +356,8 @@ ul{
         cursor: pointer;
     }
     .logo img{
-        width: 80%;
-        height: 80%;
+        width: 100%;
+        height: 100%;
     }
 }
 /* media query for less than 600 screen size */
