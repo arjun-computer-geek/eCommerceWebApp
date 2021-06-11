@@ -10,6 +10,7 @@ const App = () => {
         <Router>
             <Header/>
             <Route path = "/" component={Home} exact />
+            <Route path = "/search/:keyword" component={Home} exact />
             <Route path = "/product/:id" component={ProductDetails} exact />
             <Footer/>
         </Router>

@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react'
+import{ Route } from 'react-router-dom'
+import Search from './Search'
 
 const Header = () => {
     
@@ -23,12 +25,7 @@ const Header = () => {
                     <img className="menu-icon" src="images/menu.png" alt="mneu" width="30px" height="30px" />
                     </li>
                     <li>
-                    <div className="search-box">
-                        <input className='search-text' type="text" placeholder="Type to search"/>
-                        <a className="search-btn" href="#">
-                            <i className="fa fa-search"></i>
-                        </a>
-                    </div>
+                        <Route render={({history}) => <Search history={history} />} />
                     </li>
                     </ul>
                     </nav>
