@@ -17,9 +17,7 @@ const Search = ({history}) => {
         <form onSubmit={searchHandler}>
             <div className="search-box">
                 <input className='search-text' type="text" placeholder="Type to search" onChange={(e) => setKeyword(e.target.value)}/>
-                <a className="search-btn" href="#">
-                    <i className="fa fa-search"></i>
-                </a>
+                <i className="search-btn fa fa-search"></i>
             </div>
         </form>
     )

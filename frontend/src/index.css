@@ -78,12 +78,8 @@ p{
     top: 10px;
     background: #2f3640;
     height: 30px;
-    border-radius: 30px;
+    border-radius: 5px;
     padding:5px;
-}
-
-.search-box:hover  > .search-text{
-    width: auto;
 }
 
 .search-box:hover > .search-btn{
@@ -101,7 +97,6 @@ p{
     outline: none;
     float: left;
     color: #fff;
-    width: 0px;
 }
 
 .row{
