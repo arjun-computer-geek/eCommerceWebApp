@@ -3,6 +3,8 @@ import Home from "./components/Home";
 import Footer from "./components/layouts/Footer"
 import Header from "./components/layouts/Header"
 import ProductDetails from "./components/product/ProductDetails";
+import Login from "./components/user/Login";
+import Register from "./components/user/Register";
 
 
 const App = () => {
@@ -12,6 +14,8 @@ const App = () => {
             <Route path = "/" component={Home} exact />
             <Route path = "/search/:keyword" component={Home} exact />
             <Route path = "/product/:id" component={ProductDetails} exact />
+            <Route path = "/login" component={Login} exact />
+            <Route path = "/register" component={Register} exact />
             <Footer/>
         </Router>
     )

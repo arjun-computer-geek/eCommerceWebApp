@@ -21,12 +21,12 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    // images: [
-    //     {
-    //         title: {type:String},
-    //         url: {type:String}
-    //     }
-    // ],
+    images: [
+        {
+            title: {type:String},
+            url: {type:String}
+        }
+    ],
     category: {
         type: String,
         required: [true, 'Please select category for this product'],

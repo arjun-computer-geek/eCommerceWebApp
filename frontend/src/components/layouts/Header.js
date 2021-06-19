@@ -19,12 +19,11 @@ const Header = () => {
                                 <Route render={({history}) => <Search history={history} />} />
                             </li>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="products.html">Products</a></li>
                             <li><a href="">About</a></li>
                             <li><a href="">Contact</a></li>
-                            <li><a href="account.html">Account</a></li>
+                            <li><Link to="/login">Login</Link></li>
                             <li>    
-                                <Link to="#"><img src="images/cart.svg" alt="" width="30px" height="30px"/></Link>
+                                <Link to="#"><img src="images/bag.png" alt="" width="30px" height="30px"/></Link>
                             </li>
                         </ul>
                             <img className="menu-icon" src="images/menu.png" alt="mneu" width="30px" height="30px" />
