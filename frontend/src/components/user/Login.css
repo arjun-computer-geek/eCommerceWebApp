@@ -42,8 +42,3 @@
   height: 100%;
   object-fit: cover;
 }
-
-.rounded-circle {
-  border-radius: 50% !important;
-}
-
