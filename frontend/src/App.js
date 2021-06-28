@@ -10,6 +10,8 @@ import { loadUser } from './actions/userActions';
 import store from './store';
 import { useEffect } from "react";
 import Profile from "./components/user/Profile";
+import ProtectedRoute from "./components/route/ProtectedRoute";
+import UpdateProfile from "./components/user/UpdateProfile";
 
 
 const App = () => {
@@ -27,8 +29,8 @@ const App = () => {
             <Route path = "/product/:id" component={ProductDetails} exact />
             <Route path = "/login" component={Login} exact />
             <Route path = "/register" component={Register} exact />
-            <Route path = "/me" component={Profile} exact />
-            
+            <ProtectedRoute path = "/me" component={Profile} exact />
+            <ProtectedRoute path = "/me/update" component={UpdateProfile} exact />
             <Footer/>
         </Router>
     )
