@@ -20,7 +20,7 @@ exports.createProduct =catchAsync( async (req, res, next) => {
 //Get All Products => /api/v1/products?keyword=mobile
 exports.getProducts = catchAsync( async (req, res,next) => {
 
-    const resPerPage = 6;
+    const resPerPage = 12;
     const productsCount = await Product.countDocuments();
     console.log(productsCount);
     

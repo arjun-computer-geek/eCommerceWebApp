@@ -35,7 +35,9 @@ const UpdateProfile = ({history}) => {
         if(isUpdated){
             alert.success('User Updated Successfully');
 
-            history.push('/me');
+            dispatch(loadUser())
+
+            history.push('/me')
 
             dispatch({
                 type: UPDATE_PROFILE_RESET
@@ -128,7 +130,7 @@ const UpdateProfile = ({history}) => {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false}>Update</button>
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Update</button>
                     </form>
                 </div>
             </div>
