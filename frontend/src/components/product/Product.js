@@ -15,7 +15,7 @@ const Product = ({product}) => {
                     </div>
                     <span className="number-rating"> ({product.numOfReviews} Reviews)</span>
                 </div>
-                <p>&#8377; 499</p>
+                <p>&#8377; {product.price}</p>
             </Link>
         </div>
     )

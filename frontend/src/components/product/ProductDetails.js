@@ -78,7 +78,7 @@ const ProductDetails = ({match}) => {
                             <div className="stockCounter d-inline">
                                 <span className="btn1 btn-danger minus" onClick={decreaseQty}>-</span>
 
-                                <input type="number" className="count d-inline" value={quantity}readOnly />
+                                <input type="number" className="count d-inline" value={quantity} readOnly />
 
                                 <span className="btn1 btn-primary plus" onClick={increaseQty}>+</span>
                             </div>
