@@ -7,6 +7,7 @@ import './ProductDetails.css'
 import { getProductDetails, clearErrors } from '../../actions/productActions'
 import Loader from '../layouts/Loader'
 import Metadata from '../layouts/MetaData'
+import { addItemToCart } from '../../actions/cartActions'
 
 const ProductDetails = ({match}) => {
 
@@ -25,6 +26,11 @@ const ProductDetails = ({match}) => {
             dispatch(clearErrors());
         }
     },[dispatch, alert, error, match.params.id])
+
+    const addToCart = () => {
+        dispatch(addItemToCart(match.params.id, quantity));
+        alert.success('Item Added to Cart')
+    }
 
     const increaseQty = () =>{
         const count = document.querySelector('.count');
@@ -82,7 +88,12 @@ const ProductDetails = ({match}) => {
 
                                 <span className="btn1 btn-primary plus" onClick={increaseQty}>+</span>
                             </div>
-                            <button type="button" id="cart_btn" className="btn btn-primary d-inline ml-4">Add to Cart</button>
+                            <button type="button" 
+                                id="cart_btn" 
+                                className="btn btn-primary d-inline ml-4" 
+                                disabled={product.stock === 0}
+                                onClick={addToCart}
+                                >Add to Cart</button>
 
                             <hr/>
 

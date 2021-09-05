@@ -16,8 +16,8 @@ const UpdateProfile = ({history}) => {
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { user } = useSelector(state => state.auth);
     const {error, isUpdated, loading} = useSelector(state => state.user);
+    const { user } = useSelector(state => state.auth);
     
     useEffect(() => {
 
@@ -44,7 +44,7 @@ const UpdateProfile = ({history}) => {
             })
         }
 
-    }, [dispatch, alert, error, history, isUpdated])
+    }, [dispatch, alert, error, history, isUpdated, user])
 
     const submitHandler = (e) => {
         e.preventDefault();
