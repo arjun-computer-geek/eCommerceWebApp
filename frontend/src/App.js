@@ -5,7 +5,6 @@ import Header from "./components/layouts/Header"
 import ProductDetails from "./components/product/ProductDetails";
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
-import Cart from "./components/cart/Cart";
 import { loadUser } from './actions/userActions';
 import store from './store';
 import { useEffect } from "react";
@@ -15,7 +14,10 @@ import UpdateProfile from "./components/user/UpdateProfile";
 import UpdatePassword from "./components/user/UpdatePassword";
 import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
+
+import Cart from "./components/cart/Cart";
 import Shipping from './components/cart/Shipping'
+import ConfirmOrder from './components/cart/ConfirmOrder'
 
 
 const App = () => {
@@ -34,6 +36,7 @@ const App = () => {
 
             <Route path = "/cart" component={Cart} exact />
             <ProtectedRoute path = "/shipping" component={Shipping}/>
+            <ProtectedRoute path = "/order/confirm" component={ConfirmOrder}/>
 
             <Route path = "/login" component={Login} />
             <Route path = "/register" component={Register} />
